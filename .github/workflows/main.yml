@@ -10,8 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Build with Gradle
+      - name: Build with pip
         run: echo "Building..."
-
-      - name: SonarQube Scan
-        run: echo "Running SonarQube analysis"
