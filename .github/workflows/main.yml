@@ -11,8 +11,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build
         run: echo "Building..."
-      - name: Build Docker Image
-        run: docker build -t opspilot:latest .
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
         env:
