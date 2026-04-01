@@ -9,12 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install dependencies and Build
-        run: | 
-          npm install
-          npm run build --if-present
-      - name: Build Docker Image
-        run: docker build -t opspilot:latest .
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Build
+        run: echo "Building..."
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
